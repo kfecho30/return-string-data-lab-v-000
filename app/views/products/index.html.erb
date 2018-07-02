@@ -2,7 +2,7 @@
 <% @products.each do |product| %>
     <%= product.name %>
     <div id="product-<%= product.id %>"><%= truncate(product.description) %></div>
-    <%= button_tag "More Info" :id => "js-more"%>
+    <button class="js-more" data-id="<%= product.id %>">More Info</button>
   </div>
 <% end %>
 
