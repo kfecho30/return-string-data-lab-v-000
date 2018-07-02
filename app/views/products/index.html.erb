@@ -11,7 +11,7 @@ $(function () {
     // get the id from the data attribute
     var id = $(this).data("id");
     $.get("/products/" + id + "/body", function(data) {
-       $("#product-" + id).text(data);
+       $("#product-" + id).append(data);
     });
   });
 });
