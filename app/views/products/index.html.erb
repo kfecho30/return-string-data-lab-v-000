@@ -1,6 +1,18 @@
 <% @products.each do |product| %>
   <div id="product-<%=product.id%>">
     <%= product.name %>
-    <%= button_tag "More Info" %>
+    <%= button_tag "More Info" :id => "js-more"%>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    // get the id from the data attribute
+    var id = $(this).data("id");
+    $.get("/posts/" + id + "/body", function(data) {
+      alert(data);
+    });
+  });
+});
+</script>
