@@ -1,7 +1,7 @@
 <h1>Products</h1>
 <% @products.each do |product| %>
-  <div id="product-<%=product.id%>">
     <%= product.name %>
+    <div id="product-<%= product.id %>"><%= truncate(product.description) %></div>
     <%= button_tag "More Info" :id => "js-more"%>
   </div>
 <% end %>
